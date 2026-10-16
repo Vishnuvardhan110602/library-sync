@@ -33,7 +33,7 @@ public class OpenLibraryClient {
         this.limit = limit;
     }
 
-    /** Calls the Search API and converts valid records into ExternalBook objects. */
+   
     public List<ExternalBook> fetchBooks() {
         JsonNode root;
         try {
@@ -58,7 +58,7 @@ public class OpenLibraryClient {
             String key = doc.path("key").asText("").replace("/works/", "").trim();
             String title = doc.path("title").asText("").trim();
             if (key.isEmpty() || title.isEmpty()) {
-                continue; // validation: skip records without an id or title
+                continue;
             }
             List<String> names = new ArrayList<>();
             for (JsonNode a : doc.path("author_name")) {

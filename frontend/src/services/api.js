@@ -1,6 +1,6 @@
 const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8080/api";
 
-// One helper for every request, with friendly error messages
+
 async function request(path, options) {
   let response;
   try {
@@ -13,7 +13,7 @@ async function request(path, options) {
   try {
     data = await response.json();
   } catch (e) {
-    // response had no JSON body
+   
   }
 
   if (!response.ok) {

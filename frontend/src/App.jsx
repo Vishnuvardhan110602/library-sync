@@ -17,9 +17,9 @@ function App() {
   const [syncing, setSyncing] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
-  const [tick, setTick] = useState(0); // changing this number triggers a refresh
+  const [tick, setTick] = useState(0); 
 
-  // Totals and history (not affected by the filters)
+
   const loadSummary = useCallback(async () => {
     try {
       const [statsData, runsData] = await Promise.all([getStats(), getSyncRuns()]);
@@ -33,7 +33,6 @@ function App() {
     }
   }, []);
 
-  // Refresh automatically every 30 seconds (picks up scheduled syncs)
   useEffect(() => {
     const id = setInterval(() => setTick((t) => t + 1), 30000);
     return () => clearInterval(id);
@@ -43,7 +42,7 @@ function App() {
     loadSummary();
   }, [tick, loadSummary]);
 
-  // Books list: waits 300ms after typing stops, then fetches
+  
   useEffect(() => {
     const timer = setTimeout(async () => {
       setLoadingBooks(true);
