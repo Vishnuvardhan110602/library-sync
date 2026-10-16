@@ -6,11 +6,7 @@ detects changes with SHA-256 hashes, and shows everything on a React dashboard.
 Tech stack
 React + Vite (JavaScript) | Spring Boot 3 (Java 21, Maven) | MySQL + JPA/Hibernate | Spring Scheduling
 
-Architecture
-```
-```
-- controller: REST endpoints. service: sync logic. repository: database access.
-- entity: JPA tables. dto: JSON shapes. client: Open Library calls. config: CORS, scheduling, errors.
+
 
 Sync logic
 1. A sync starts from the scheduler (every 5 minutes) or from `POST /api/sync`.
