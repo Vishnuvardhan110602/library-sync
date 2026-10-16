@@ -31,23 +31,3 @@ Setup
 4. Frontend: `cd frontend && npm install && npm run dev`
 5. Open http://localhost:5173
 
-Environment variables (backend)
-| Name | Default |
-|---|---|
-| DB_URL | jdbc:mysql://localhost:3306/library_sync?... |
-| DB_USERNAME | library_user |
-| DB_PASSWORD | (empty - set it yourself, never commit it) |
-| OPENLIBRARY_QUERY | programming |
-| OPENLIBRARY_LIMIT | 50 |
-| CORS_ORIGIN | http://localhost:5173 |
-
-Frontend: `VITE_API_URL` (default `http://localhost:8080/api`).
-
-## API
-| Method | Path | Description |
-|---|---|---|
-| GET | /api/health | Health check |
-| GET | /api/books?search=&status= | List books |
-| GET | /api/sync-runs?limit=10 | Sync history |
-| POST | /api/sync | Manual sync |
-| GET | /api/stats | Totals and counts by status |
