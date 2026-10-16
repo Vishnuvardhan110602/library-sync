@@ -1,0 +1,17 @@
+/.metadata/
+# Java / Maven
+backend/target/
+*.class
+*.log
+# Node
+frontend/node_modules/
+frontend/dist/
+# Secrets - never commit
+.env
+.env.local
+application-local.properties
+# IDEs / OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
